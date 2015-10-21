@@ -1,0 +1,26 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>add contact</title>
+</head>
+<body>
+<div class="container">
+<div >
+
+           <h1>new friends</h1>
+          <% users.forEach( function(user) { %>
+              <div>
+              <p>
+                <a href="/addContact/<%= user._id %>/<%= user.username %>">
+                  <%= user.username %>
+               </p>
+              </div>
+          <% }) %>
+          
+
+</div>
+
+</div>
+</body>
+</html>          

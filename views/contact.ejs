@@ -1,0 +1,48 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>chating</title>
+</head>
+
+<body>
+<div>
+
+	<div class="page-header text-center">
+		<h1><span class="fa fa-anchor"></span> contacts</h1>
+		<a href="/logout">Logout</a>
+	</div>
+
+	<div class="row">
+
+		
+		<div>
+			<div>
+				<h3><span></span> me</h3>
+
+					<p>
+						<strong>id</strong>: <%= user._id %><br>
+						<strong>email</strong>: <%= user.username %><br>
+						
+					</p>
+
+			</div>
+		</div>
+
+
+
+         <h1>contacts</h1>
+<%  contacts.forEach( function(contact) {  var user1= user.username;  var user2= contact.name; if(user1.localeCompare(user2)>0){ var tmp= user1; user1= user2; user2= tmp;} console.log(user1+ " "+ user2); %>
+  <div>
+	<a href="/chat/<%=user1%>/<%=user2%>"></span><%= contact.name %></span></a>
+  </div>
+ <% }) %>
+
+
+ <a href= "/addContact">Add Contact</a>
+		</div>
+
+</div>
+</body>
+
+</html>

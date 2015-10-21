@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title> chat</title>
+    <link rel="stylesheet" href="/css/chater.css">
+  </head>
+  <body>
+
+    <div class="chat-name">
+    <div hidden id="senderId" > <%= senderId%> </div>
+   <span> I am <div id="senderName"><%=senderName%></div> </span>
+    <span> chating to: <div id="toName"><%=toName%></div> </span>
+</div>
+
+  <div class="chat-history">History</br>
+    
+    <%  messges.forEach( function(msg) {  if(msg.type==="text"){  %> 
+  <span><%= msg.sender.name %>: <%= msg.content %></br></span>  <span>  <%= msg.date %></br></span>
+<% } }) %>
+
+    </div>
+
+
+    <div class="chat-messages">
+    <ul id="messages"></ul>
+    </div>
+
+<div class="chat-msg">
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+    <div class="chat-texarea">
+    <div><input type="file" id="imagefile" accept="image/*" /></div>
+   </div>
+</div>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/chating.js"></script>
+    
+  </body>
+</html>
